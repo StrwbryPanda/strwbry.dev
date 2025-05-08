@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #7289da;
+  --secondary-color: #2c2f33;
+  --background-color: #23272a;
+  --text-color: #ffffff;
+  --accent-color: #99aab5;
+}
+
+@layer base {
+  body {
+    @apply bg-[#23272a] text-white;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .social-link {
+    @apply text-white no-underline px-4 py-2 border-2 border-[#7289da] rounded-md transition-all duration-300 hover:bg-[#7289da] hover:text-[#23272a];
+  }
+
+  .project-card {
+    @apply bg-[#2c2f33] rounded-lg p-6 transition-transform duration-300 hover:-translate-y-1;
+  }
+} 
