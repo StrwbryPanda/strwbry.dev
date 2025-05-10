@@ -75,22 +75,29 @@ export default function Home() {
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-[#7289da] mb-6">Contact</h2>
-          <div className="prose prose-invert max-w-none">
-            <p className="text-xl text-[#99aab5] mb-4">
-              Interested in working together? Feel free to reach out through any of the following platforms:
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="https://github.com/StrwbryPanda" target="_blank" className="social-link">
-                GitHub (Personal)
-              </Link>
-              <Link href="https://github.com/StrwbryDev" target="_blank" className="social-link">
-                GitHub (Organization)
-              </Link>
-              <Link href="https://modrinth.com/user/Strwbry" target="_blank" className="social-link">
-                Modrinth
-              </Link>
-            </div>
+          <h2 className="text-2xl font-semibold text-[#7289da] mb-6">Links</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <Link 
+              href="https://github.com/StrwbryPanda" 
+              target="_blank"
+              className="social-link text-center"
+            >
+              GitHub (Personal)
+            </Link>
+            <Link 
+              href="https://github.com/StrwbryDev" 
+              target="_blank"
+              className="social-link text-center"
+            >
+              GitHub (Organization)
+            </Link>
+            <Link 
+              href="https://modrinth.com/user/Strwbry" 
+              target="_blank"
+              className="social-link text-center"
+            >
+              Modrinth
+            </Link>
           </div>
         </section>
       </main>

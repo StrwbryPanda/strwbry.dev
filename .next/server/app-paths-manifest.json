@@ -2,6 +2,6 @@
   "/projects/eventhorizon/page": "app/projects/eventhorizon/page.js",
   "/page": "app/page.js",
   "/about/page": "app/about/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/projects/page": "app/projects/page.js"
+  "/projects/page": "app/projects/page.js",
+  "/contact/page": "app/contact/page.js"
 }
