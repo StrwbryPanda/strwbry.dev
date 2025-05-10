@@ -1,0 +1,16 @@
+dev.strwbry.eventhorizon
+dev.strwbry.eventhorizon.commands
+dev.strwbry.eventhorizon.events
+dev.strwbry.eventhorizon.events.attributes
+dev.strwbry.eventhorizon.events.blockmodification
+dev.strwbry.eventhorizon.events.blockmodification.subevents
+dev.strwbry.eventhorizon.events.dropmodification
+dev.strwbry.eventhorizon.events.effects
+dev.strwbry.eventhorizon.events.gamerule
+dev.strwbry.eventhorizon.events.inventoryadjustments
+dev.strwbry.eventhorizon.events.itemspawn
+dev.strwbry.eventhorizon.events.mobspawn
+dev.strwbry.eventhorizon.events.utility
+dev.strwbry.eventhorizon.events.utility.fawe
+dev.strwbry.eventhorizon.events.utility.fawe.region
+dev.strwbry.eventhorizon.utility
