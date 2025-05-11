@@ -1,11 +1,7 @@
 import Link from 'next/link'
 import { Menu } from 'lucide-react'
 import { Button } from "@/components/ui/button"
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger } from "../components/ui/sheet"
 
 interface Project {
   title: string;
@@ -66,11 +62,11 @@ export default function Home() {
           {/* Mobile Navigation */}
           <Sheet>
             <SheetTrigger asChild className="sm:hidden">
-              <Button variant="ghost" size="icon" className="text-white hover:text-[#ff9af6]">
+              <Button variant="ghost" size="sm" className="text-white hover:text-[#ff9af6] p-2 rounded-full">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-gray-900 border-l border-gray-800">
+            <SheetContent className="bg-gray-900 border-l border-gray-800">
               <nav className="flex flex-col gap-6 mt-8">
                 <NavLinks />
               </nav>

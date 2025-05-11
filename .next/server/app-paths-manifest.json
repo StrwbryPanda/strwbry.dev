@@ -1,6 +1,7 @@
 {
+  "/not-found": "app/not-found.js",
   "/page": "app/page.js",
   "/projects/eventhorizon/page": "app/projects/eventhorizon/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/about/page": "app/about/page.js"
+  "/graphic-design/page": "app/graphic-design/page.js",
+  "/projects/page": "app/projects/page.js"
 }
