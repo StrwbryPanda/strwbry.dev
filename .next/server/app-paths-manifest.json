@@ -1,5 +1,6 @@
 {
   "/page": "app/page.js",
-  "/graphic-design/page": "app/graphic-design/page.js",
-  "/contact/page": "app/contact/page.js"
+  "/projects/eventhorizon/page": "app/projects/eventhorizon/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/about/page": "app/about/page.js"
 }
