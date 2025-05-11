@@ -1,7 +1,5 @@
 {
-  "/projects/eventhorizon/page": "app/projects/eventhorizon/page.js",
   "/page": "app/page.js",
-  "/about/page": "app/about/page.js",
-  "/projects/page": "app/projects/page.js",
+  "/graphic-design/page": "app/graphic-design/page.js",
   "/contact/page": "app/contact/page.js"
 }

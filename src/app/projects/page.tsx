@@ -24,15 +24,25 @@ const featuredProjects: Project[] = [
     isExternal: true
   },
   {
-    title: 'SWE6633 Final Project',
-    description: 'UI Prototype for a Project Management System Using Unity. A comprehensive project showcasing Unity development skills and UI/UX design principles.',
-    link: 'https://github.com/StrwbryPanda/SWE6633_Final_Project',
-    isExternal: true
-  },
-  {
     title: 'Adventra',
     description: 'Group Project implementing Agile Methodology and Sprint Cycles. A collaborative project demonstrating team development practices and project management skills.',
     link: 'https://github.com/StrwbryPanda/SWE_6733_Group_3_Adventra',
+    isExternal: true
+  },
+  {
+    title: 'strwbry.dev',
+    description: 'Personal portfolio website built with Next.js and Tailwind CSS, showcasing my projects and skills.',
+    link: 'https://github.com/StrwbryPanda/strwbry.dev',
+    isExternal: true
+  }
+]
+
+// Additional projects to be shown in the All Projects section
+const additionalProjects: Project[] = [
+  {
+    title: 'SWE6633 Final Project',
+    description: 'UI Prototype for a Project Management System Using Unity. A comprehensive project showcasing Unity development skills and UI/UX design principles.',
+    link: 'https://github.com/StrwbryPanda/SWE6633_Final_Project',
     isExternal: true
   },
   {
@@ -62,7 +72,7 @@ async function getGitHubRepos() {
 
   // Combine and filter repositories
   const allRepos = [...personalRepos, ...orgRepos]
-    .filter(repo => !repo.fork && !repo.archived)
+    .filter(repo => !repo.fork && !repo.archived && repo.name !== 'ScoreSync' && repo.name !== 'strwbry.dev')
     .map(repo => ({
       title: repo.name,
       description: repo.description || 'No description available',
@@ -77,72 +87,86 @@ async function getGitHubRepos() {
 
 export default async function ProjectsPage() {
   const githubProjects = await getGitHubRepos();
+  const allProjects = [...additionalProjects, ...githubProjects];
 
   return (
-    <div className="min-h-screen">
-      <header className="bg-[#2c2f33] py-8">
-        <div className="container">
-          <Link href="/" className="text-[#7289da] hover:text-[#99aab5] transition-colors">
-            ← Back to Home
-          </Link>
-        </div>
-      </header>
-
-      <main className="container py-16">
+    <main className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
+      <div className="container mx-auto px-4 py-16">
+        <h1 className="text-4xl md:text-5xl font-bold text-center mb-12">Projects</h1>
+        
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-[#7289da] mb-8">Projects</h1>
-          
           <section className="mb-16">
-            <h2 className="text-2xl font-semibold text-[#7289da] mb-6">Featured Projects</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">Featured Projects</h2>
             <div className="grid grid-cols-1 gap-8">
               {featuredProjects.map((project, index) => (
                 <Link 
                   key={index} 
                   href={project.link}
                   target={project.isExternal ? "_blank" : undefined}
-                  className="project-card block hover:no-underline"
+                  className="text-white hover:text-[#ff9af6] transition-colors relative group"
                 >
-                  <h3 className="text-xl font-semibold text-[#7289da] mb-4">{project.title}</h3>
-                  <p className="text-[#99aab5]">{project.description}</p>
+                  <div className="border border-[#2c2f33] rounded-lg p-8 transition-all duration-300 hover:border-[#ff9af6]">
+                    <h3 className="text-xl font-semibold mb-4 group-hover:text-[#ff9af6] transition-colors relative">
+                      <span className="relative">
+                        {project.title}
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ff9af6] transition-all duration-200 group-hover:w-full"></span>
+                      </span>
+                    </h3>
+                    <p className="text-[#99aab5]">{project.description}</p>
+                  </div>
                 </Link>
               ))}
             </div>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-[#7289da] mb-6">All Projects</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">All Projects</h2>
             <div className="grid grid-cols-1 gap-6">
-              {githubProjects.map((project, index) => (
+              {allProjects.map((project, index) => (
                 <Link 
                   key={index} 
                   href={project.link}
                   target="_blank"
-                  className="project-card block hover:no-underline"
+                  className="text-white hover:text-[#ff9af6] transition-colors relative group"
                 >
-                  <div className="flex justify-between items-start">
-                    <h3 className="text-xl font-semibold text-[#7289da] mb-2">{project.title}</h3>
-                    {project.stars > 0 && (
-                      <span className="text-[#99aab5] flex items-center gap-1">
-                        ★ {project.stars}
-                      </span>
-                    )}
+                  <div className="border border-[#2c2f33] rounded-lg p-8 transition-all duration-300 hover:border-[#ff9af6]">
+                    <div className="flex flex-col items-center">
+                      <h3 className="text-xl font-semibold mb-2 relative">
+                        <span className="relative">
+                          {project.title}
+                          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ff9af6] transition-all duration-200 group-hover:w-full"></span>
+                        </span>
+                      </h3>
+                      {project.stars > 0 && (
+                        <span className="text-[#99aab5] flex items-center gap-1">
+                          ★ {project.stars}
+                        </span>
+                      )}
+                      <p className="text-[#99aab5] mb-2">{project.description}</p>
+                      {project.language && (
+                        <span className="text-sm">{project.language}</span>
+                      )}
+                    </div>
                   </div>
-                  <p className="text-[#99aab5] mb-2">{project.description}</p>
-                  {project.language && (
-                    <span className="text-sm text-[#7289da]">{project.language}</span>
-                  )}
                 </Link>
               ))}
             </div>
           </section>
         </div>
-      </main>
 
-      <footer className="bg-[#2c2f33] py-8 mt-16 text-center">
-        <div className="container">
-          <p>&copy; {new Date().getFullYear()} Strwbry. All rights reserved.</p>
+        {/* Back to Home */}
+        <div className="mt-12">
+          <Link
+            href="/"
+            className="text-white hover:text-[#ff9af6] transition-colors relative group"
+          >
+            <span className="relative">
+              Back to Home
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ff9af6] transition-all duration-200 group-hover:w-full"></span>
+            </span>
+          </Link>
         </div>
-      </footer>
-    </div>
+      </div>
+    </main>
   )
 } 

@@ -2,33 +2,25 @@ import Link from 'next/link'
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen">
-      <header className="bg-[#2c2f33] py-8">
-        <div className="container">
-          <Link href="/" className="text-[#7289da] hover:text-[#99aab5] transition-colors">
-            ← Back to Home
-          </Link>
-        </div>
-      </header>
-
-      <main className="container py-16">
+    <main className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
+      <div className="container mx-auto px-4 py-16">
+        <h1 className="text-4xl md:text-5xl font-bold text-center mb-12">About Me</h1>
+        
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl font-bold text-[#7289da] mb-8">About Me</h1>
-          
           <div className="prose prose-invert max-w-none">
-            <p className="text-xl text-[#99aab5] mb-8">
+            <p className="text-xl text-[#99aab5] mb-8 text-center">
               I'm a software engineer and game developer with a Master's in Software Engineering and a Bachelor's in Computer Game Design and Development. 
               Currently, I am open to freelance opportunities and collaborations in Unity game development or Minecraft plugin development.
             </p>
 
-            <h2 className="text-2xl font-semibold text-[#7289da] mt-12 mb-4">Education</h2>
-            <ul className="list-disc list-inside text-[#99aab5] space-y-2 mb-8">
+            <h2 className="text-3xl font-bold mb-8 text-center">Education</h2>
+            <ul className="list-disc list-inside text-[#99aab5] space-y-2 mb-8 text-center">
               <li>Master's in Software Engineering</li>
               <li>Bachelor's in Computer Game Design and Development</li>
             </ul>
 
-            <h2 className="text-2xl font-semibold text-[#7289da] mt-12 mb-4">Skills</h2>
-            <ul className="list-disc list-inside text-[#99aab5] space-y-2 mb-8">
+            <h2 className="text-3xl font-bold mb-8 text-center">Skills</h2>
+            <ul className="list-disc list-inside text-[#99aab5] space-y-2 mb-8 text-center">
               <li>Unity Game Development</li>
               <li>Minecraft Plugin Development (Java)</li>
               <li>Software Engineering</li>
@@ -36,13 +28,20 @@ export default function AboutPage() {
             </ul>
           </div>
         </div>
-      </main>
 
-      <footer className="bg-[#2c2f33] py-8 mt-16 text-center">
-        <div className="container">
-          <p>&copy; {new Date().getFullYear()} Strwbry. All rights reserved.</p>
+        {/* Back to Home */}
+        <div className="mt-12">
+          <Link
+            href="/"
+            className="text-white hover:text-[#ff9af6] transition-colors relative group"
+          >
+            <span className="relative">
+              Back to Home
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ff9af6] transition-all duration-200 group-hover:w-full"></span>
+            </span>
+          </Link>
         </div>
-      </footer>
-    </div>
+      </div>
+    </main>
   )
 } 

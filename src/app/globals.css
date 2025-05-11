@@ -22,7 +22,7 @@
   }
 
   .social-link {
-    @apply text-white no-underline px-4 py-2 border-2 border-[#7289da] rounded-md transition-all duration-300 hover:bg-[#7289da] hover:text-[#23272a];
+    @apply text-white no-underline px-4 py-2 border-2 border-[#ff9af6] rounded-md transition-all duration-300 hover:bg-[#ff9af6] hover:text-[#23272a];
   }
 
   .project-card {

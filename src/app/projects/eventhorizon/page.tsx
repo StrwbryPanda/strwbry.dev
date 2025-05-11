@@ -17,21 +17,17 @@ export default function EventHorizonPage() {
           
           <div className="prose prose-invert max-w-none">
             <p className="text-xl text-[#99aab5] mb-8">
-              EventHorizon is an interactive game mode plugin, originally developed for the KSU Esports Minecraft server, 
-              aimed at boosting replayability and player engagement. It introduces random, server-wide events, categorized 
-              as positive, negative, or neutral, that challenge players to adapt and survive in both solo and team-based 
-              gameplay. These unpredictable occurrences create a dynamic and thrilling environment. EventHorizon can run as 
-              a standalone game mode or integrate seamlessly with other game mode plugins, such as survival games, 
-              speedruns, TaskCrafters, etc.
+              EventHorizon is a powerful Minecraft Paper plugin designed to streamline the management of server events and competitions. 
+              It provides server administrators with a comprehensive suite of tools to create, manage, and monitor various types of events.
             </p>
 
             <h2 className="text-2xl font-semibold text-[#7289da] mt-12 mb-4">Key Features</h2>
             <ul className="list-disc list-inside text-[#99aab5] space-y-2 mb-8">
-              <li>Random server-wide events (positive, negative, and neutral)</li>
-              <li>Support for both solo and team-based gameplay</li>
-              <li>Seamless integration with other game mode plugins</li>
-              <li>Dynamic and unpredictable gameplay environment</li>
-              <li>Enhanced player engagement and replayability</li>
+              <li>Event creation and management system</li>
+              <li>Customizable event types and rules</li>
+              <li>Real-time event monitoring and statistics</li>
+              <li>Player registration and team management</li>
+              <li>Automated event scheduling and notifications</li>
             </ul>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-12">
