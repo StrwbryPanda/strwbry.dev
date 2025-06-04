@@ -18,9 +18,9 @@ const projects: Project[] = [
     isExternal: false
   },
   {
-    title: 'ScoreSync',
-    description: 'A Minecraft Paper plugin for tracking scores in minigame tournaments.',
-    link: 'https://github.com/StrwbryPanda/ScoreSync',
+    title: 'Verdict',
+    description: 'A powerful moderation and ticketing plugin built for Minecraft servers running the Paper API. Provides server staff with essential tools to manage player behavior and handle support requests.',
+    link: 'https://github.com/StrwbryDev/Verdict',
     isExternal: true
   }
 ]

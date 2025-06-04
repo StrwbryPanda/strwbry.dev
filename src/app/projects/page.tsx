@@ -18,9 +18,9 @@ const featuredProjects: Project[] = [
     isExternal: false
   },
   {
-    title: 'ScoreSync',
-    description: 'A Minecraft Paper plugin for tracking scores in minigame tournaments.',
-    link: 'https://github.com/StrwbryPanda/ScoreSync',
+    title: 'Verdict',
+    description: 'A powerful moderation and ticketing plugin built for Minecraft servers running the Paper API. Provides server staff with essential tools to manage player behavior and handle support requests.',
+    link: 'https://github.com/StrwbryDev/Verdict',
     isExternal: true
   },
   {
@@ -39,6 +39,12 @@ const featuredProjects: Project[] = [
 
 // Additional projects to be shown in the All Projects section
 const additionalProjects: Project[] = [
+  {
+    title: 'ScoreSync',
+    description: 'A Minecraft Paper plugin for tracking scores in minigame tournaments.',
+    link: 'https://github.com/StrwbryPanda/ScoreSync',
+    isExternal: true
+  },
   {
     title: 'SWE6633 Final Project',
     description: 'UI Prototype for a Project Management System Using Unity. A comprehensive project showcasing Unity development skills and UI/UX design principles.',
@@ -72,7 +78,11 @@ async function getGitHubRepos() {
 
   // Combine and filter repositories
   const allRepos = [...personalRepos, ...orgRepos]
-    .filter(repo => !repo.fork && !repo.archived && repo.name !== 'ScoreSync' && repo.name !== 'strwbry.dev')
+    .filter(repo => !repo.fork && !repo.archived && 
+      repo.name !== 'ScoreSync' && 
+      repo.name !== 'strwbry.dev' && 
+      repo.name !== 'EventHorizon' && 
+      repo.name !== 'Verdict')
     .map(repo => ({
       title: repo.name,
       description: repo.description || 'No description available',
@@ -120,7 +130,7 @@ export default async function ProjectsPage() {
           </section>
 
           <section>
-            <h2 className="text-3xl font-bold mb-8 text-center">All Projects</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">Other Projects</h2>
             <div className="grid grid-cols-1 gap-6">
               {allProjects.map((project, index) => (
                 <Link 
